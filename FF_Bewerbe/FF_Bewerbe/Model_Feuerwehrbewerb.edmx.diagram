@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a1104541dc954b47b1e5b96a0912aeea" Name="Diagram1" ZoomLevel="90" >
+        <EntityTypeShape EntityType="Model_Feuerwehrbewerb.tBewerb" Width="1.5" PointX="0.625" PointY="0.5" />
+        <EntityTypeShape EntityType="Model_Feuerwehrbewerb.tMannschaft" Width="1.5" PointX="0.625" PointY="5.5" />
+        <EntityTypeShape EntityType="Model_Feuerwehrbewerb.tTeilnehmendeMannschaft" Width="2.375" PointX="0.625" PointY="2.75" />
+        <EntityTypeShape EntityType="Model_Feuerwehrbewerb.tBahn" Width="1.5" PointX="6.5" PointY="1.25" />
+        <EntityTypeShape EntityType="Model_Feuerwehrbewerb.tTyp" Width="1.5" PointX="6.5" PointY="3.125" />
+        <EntityTypeShape EntityType="Model_Feuerwehrbewerb.tTeilnehmer" Width="1.5" PointX="4" PointY="5.25" />
+        <EntityTypeShape EntityType="Model_Feuerwehrbewerb.tLauf" Width="1.5" PointX="3.875" PointY="2.375" />
+        <AssociationConnector Association="Model_Feuerwehrbewerb.tBewerbZOT_Bewerb_Mannschaft" />
+        <AssociationConnector Association="Model_Feuerwehrbewerb.tMannschafttTeilnehmer" />
+        <AssociationConnector Association="Model_Feuerwehrbewerb.tBahntLauf" />
+        <AssociationConnector Association="Model_Feuerwehrbewerb.tTyptLauf" />
+        <AssociationConnector Association="Model_Feuerwehrbewerb.tMannschaftZOT_Bewerb_Mannschaft" />
+        <AssociationConnector Association="Model_Feuerwehrbewerb.ZOT_Bewerb_MannschafttLauf" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

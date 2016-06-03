@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model_FeuerwehrbewerbStoreContainer" CdmEntityContainer="Model_FeuerwehrbewerbContainer">
+    <EntitySetMapping Name="tBewerbSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model_Feuerwehrbewerb.tBewerb)">
+        <MappingFragment StoreEntitySet="tBewerbSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Datum" ColumnName="Datum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tMannschaftSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model_Feuerwehrbewerb.tMannschaft)">
+        <MappingFragment StoreEntitySet="tMannschaftSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tTeilnehmendeMannschaftSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model_Feuerwehrbewerb.tTeilnehmendeMannschaft)">
+        <MappingFragment StoreEntitySet="tTeilnehmendeMannschaftSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Startnummer" ColumnName="Startnummer" />
+          <ScalarProperty Name="Platzierung" ColumnName="Platzierung" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tBahnSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model_Feuerwehrbewerb.tBahn)">
+        <MappingFragment StoreEntitySet="tBahnSet">
+          <ScalarProperty Name="Nummer" ColumnName="Nummer" />
+          <ScalarProperty Name="Bezeichnung" ColumnName="Bezeichnung" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tTypSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model_Feuerwehrbewerb.tTyp)">
+        <MappingFragment StoreEntitySet="tTypSet">
+          <ScalarProperty Name="Kuerzel" ColumnName="Kuerzel" />
+          <ScalarProperty Name="Bezeichnung" ColumnName="Bezeichnung" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tTeilnehmerSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model_Feuerwehrbewerb.tTeilnehmer)">
+        <MappingFragment StoreEntitySet="tTeilnehmerSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Vorname" ColumnName="Vorname" />
+          <ScalarProperty Name="Nachname" ColumnName="Nachname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tLaufSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model_Feuerwehrbewerb.tLauf)">
+        <MappingFragment StoreEntitySet="tLaufSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nettozeit" ColumnName="Nettozeit" />
+          <ScalarProperty Name="Strafsekunden" ColumnName="Strafsekunden" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="tBewerbZOT_Bewerb_Mannschaft" TypeName="Model_Feuerwehrbewerb.tBewerbZOT_Bewerb_Mannschaft" StoreEntitySet="tTeilnehmendeMannschaftSet">
+      <EndProperty Name="tBewerb">
+        <ScalarProperty Name="Id" ColumnName="tBewerb_Id" />
+      </EndProperty>
+      <EndProperty Name="ZOT_Bewerb_Mannschaft">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tMannschafttTeilnehmer" TypeName="Model_Feuerwehrbewerb.tMannschafttTeilnehmer" StoreEntitySet="tTeilnehmerSet">
+      <EndProperty Name="tMannschaft">
+        <ScalarProperty Name="Id" ColumnName="tMannschaft_Id" />
+      </EndProperty>
+      <EndProperty Name="tTeilnehmer">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tBahntLauf" TypeName="Model_Feuerwehrbewerb.tBahntLauf" StoreEntitySet="tLaufSet">
+      <EndProperty Name="tBahn">
+        <ScalarProperty Name="Nummer" ColumnName="tBahn_Nummer" />
+      </EndProperty>
+      <EndProperty Name="tLauf">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tTyptLauf" TypeName="Model_Feuerwehrbewerb.tTyptLauf" StoreEntitySet="tLaufSet">
+      <EndProperty Name="tTyp">
+        <ScalarProperty Name="Kuerzel" ColumnName="tTyp_Kuerzel" />
+      </EndProperty>
+      <EndProperty Name="tLauf">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tMannschaftZOT_Bewerb_Mannschaft" TypeName="Model_Feuerwehrbewerb.tMannschaftZOT_Bewerb_Mannschaft" StoreEntitySet="tTeilnehmendeMannschaftSet">
+      <EndProperty Name="tMannschaft">
+        <ScalarProperty Name="Id" ColumnName="tMannschaft_Id" />
+      </EndProperty>
+      <EndProperty Name="ZOT_Bewerb_Mannschaft">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ZOT_Bewerb_MannschafttLauf" TypeName="Model_Feuerwehrbewerb.ZOT_Bewerb_MannschafttLauf" StoreEntitySet="tLaufSet">
+      <EndProperty Name="ZOT_Bewerb_Mannschaft">
+        <ScalarProperty Name="Id" ColumnName="ZOT_Bewerb_Mannschaft_Id" />
+      </EndProperty>
+      <EndProperty Name="tLauf">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

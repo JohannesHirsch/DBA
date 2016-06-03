@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model_Feuerwehrbewerb.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model_FeuerwehrbewerbStoreContainer">
+    <EntitySet Name="tBewerbSet" EntityType="Model_Feuerwehrbewerb.Store.tBewerbSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tMannschaftSet" EntityType="Model_Feuerwehrbewerb.Store.tMannschaftSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tTeilnehmendeMannschaftSet" EntityType="Model_Feuerwehrbewerb.Store.tTeilnehmendeMannschaftSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tBahnSet" EntityType="Model_Feuerwehrbewerb.Store.tBahnSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tTypSet" EntityType="Model_Feuerwehrbewerb.Store.tTypSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tTeilnehmerSet" EntityType="Model_Feuerwehrbewerb.Store.tTeilnehmerSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tLaufSet" EntityType="Model_Feuerwehrbewerb.Store.tLaufSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="tBewerbZOT_Bewerb_Mannschaft" Association="Model_Feuerwehrbewerb.Store.tBewerbZOT_Bewerb_Mannschaft">
+      <End Role="tBewerb" EntitySet="tBewerbSet" />
+      <End Role="ZOT_Bewerb_Mannschaft" EntitySet="tTeilnehmendeMannschaftSet" />
+    </AssociationSet>
+    <AssociationSet Name="tMannschafttTeilnehmer" Association="Model_Feuerwehrbewerb.Store.tMannschafttTeilnehmer">
+      <End Role="tMannschaft" EntitySet="tMannschaftSet" />
+      <End Role="tTeilnehmer" EntitySet="tTeilnehmerSet" />
+    </AssociationSet>
+    <AssociationSet Name="tBahntLauf" Association="Model_Feuerwehrbewerb.Store.tBahntLauf">
+      <End Role="tBahn" EntitySet="tBahnSet" />
+      <End Role="tLauf" EntitySet="tLaufSet" />
+    </AssociationSet>
+    <AssociationSet Name="tTyptLauf" Association="Model_Feuerwehrbewerb.Store.tTyptLauf">
+      <End Role="tTyp" EntitySet="tTypSet" />
+      <End Role="tLauf" EntitySet="tLaufSet" />
+    </AssociationSet>
+    <AssociationSet Name="tMannschaftZOT_Bewerb_Mannschaft" Association="Model_Feuerwehrbewerb.Store.tMannschaftZOT_Bewerb_Mannschaft">
+      <End Role="tMannschaft" EntitySet="tMannschaftSet" />
+      <End Role="ZOT_Bewerb_Mannschaft" EntitySet="tTeilnehmendeMannschaftSet" />
+    </AssociationSet>
+    <AssociationSet Name="ZOT_Bewerb_MannschafttLauf" Association="Model_Feuerwehrbewerb.Store.ZOT_Bewerb_MannschafttLauf">
+      <End Role="ZOT_Bewerb_Mannschaft" EntitySet="tTeilnehmendeMannschaftSet" />
+      <End Role="tLauf" EntitySet="tLaufSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="tBewerbSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Datum" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tMannschaftSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tTeilnehmendeMannschaftSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Startnummer" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Platzierung" Type="int" Nullable="false" />
+    <Property Name="tBewerb_Id" Type="int" Nullable="false" />
+    <Property Name="tMannschaft_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tBahnSet">
+    <Key>
+      <PropertyRef Name="Nummer" />
+    </Key>
+    <Property Name="Nummer" Type="int" Nullable="false" />
+    <Property Name="Bezeichnung" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tTypSet">
+    <Key>
+      <PropertyRef Name="Kuerzel" />
+    </Key>
+    <Property Name="Kuerzel" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Bezeichnung" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tTeilnehmerSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Vorname" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Nachname" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="tMannschaft_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tLaufSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nettozeit" Type="datetime" Nullable="false" />
+    <Property Name="Strafsekunden" Type="datetime" Nullable="false" />
+    <Property Name="tBahn_Nummer" Type="int" Nullable="false" />
+    <Property Name="tTyp_Kuerzel" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ZOT_Bewerb_Mannschaft_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="tBewerbZOT_Bewerb_Mannschaft">
+    <End Role="tBewerb" Type="Model_Feuerwehrbewerb.Store.tBewerbSet" Multiplicity="1" />
+    <End Role="ZOT_Bewerb_Mannschaft" Type="Model_Feuerwehrbewerb.Store.tTeilnehmendeMannschaftSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tBewerb">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ZOT_Bewerb_Mannschaft">
+        <PropertyRef Name="tBewerb_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tMannschafttTeilnehmer">
+    <End Role="tMannschaft" Type="Model_Feuerwehrbewerb.Store.tMannschaftSet" Multiplicity="1" />
+    <End Role="tTeilnehmer" Type="Model_Feuerwehrbewerb.Store.tTeilnehmerSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tMannschaft">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tTeilnehmer">
+        <PropertyRef Name="tMannschaft_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tBahntLauf">
+    <End Role="tBahn" Type="Model_Feuerwehrbewerb.Store.tBahnSet" Multiplicity="1" />
+    <End Role="tLauf" Type="Model_Feuerwehrbewerb.Store.tLaufSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tBahn">
+        <PropertyRef Name="Nummer" />
+      </Principal>
+      <Dependent Role="tLauf">
+        <PropertyRef Name="tBahn_Nummer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tTyptLauf">
+    <End Role="tTyp" Type="Model_Feuerwehrbewerb.Store.tTypSet" Multiplicity="1" />
+    <End Role="tLauf" Type="Model_Feuerwehrbewerb.Store.tLaufSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tTyp">
+        <PropertyRef Name="Kuerzel" />
+      </Principal>
+      <Dependent Role="tLauf">
+        <PropertyRef Name="tTyp_Kuerzel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tMannschaftZOT_Bewerb_Mannschaft">
+    <End Role="tMannschaft" Type="Model_Feuerwehrbewerb.Store.tMannschaftSet" Multiplicity="1" />
+    <End Role="ZOT_Bewerb_Mannschaft" Type="Model_Feuerwehrbewerb.Store.tTeilnehmendeMannschaftSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tMannschaft">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ZOT_Bewerb_Mannschaft">
+        <PropertyRef Name="tMannschaft_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ZOT_Bewerb_MannschafttLauf">
+    <End Role="ZOT_Bewerb_Mannschaft" Type="Model_Feuerwehrbewerb.Store.tTeilnehmendeMannschaftSet" Multiplicity="1" />
+    <End Role="tLauf" Type="Model_Feuerwehrbewerb.Store.tLaufSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ZOT_Bewerb_Mannschaft">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tLauf">
+        <PropertyRef Name="ZOT_Bewerb_Mannschaft_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
