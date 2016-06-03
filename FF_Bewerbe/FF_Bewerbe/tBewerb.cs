@@ -17,7 +17,7 @@ namespace FF_Bewerbe
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tBewerb()
         {
-            this.ZOT_Bewerb_Mannschaft = new HashSet<tTeilnehmendeMannschaft>();
+            this.ZOT_Bewerb_Mannschaft = new ObservableListSource<tTeilnehmendeMannschaft>();
         }
     
         public int Id { get; set; }
@@ -25,6 +25,6 @@ namespace FF_Bewerbe
         public System.DateTime Datum { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tTeilnehmendeMannschaft> ZOT_Bewerb_Mannschaft { get; set; }
+        public virtual ObservableListSource<tTeilnehmendeMannschaft> ZOT_Bewerb_Mannschaft { get; set; }
     }
 }
