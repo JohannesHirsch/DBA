@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model_Feuerwehrbewerb" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="Model_FeuerwehrbewerbContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tBewerbSet" EntityType="Model_Feuerwehrbewerb.tBewerb" />
+    <EntitySet Name="tMannschaftSet" EntityType="Model_Feuerwehrbewerb.tMannschaft" />
+    <EntitySet Name="tTeilnehmendeMannschaftSet" EntityType="Model_Feuerwehrbewerb.tTeilnehmendeMannschaft" />
+    <EntitySet Name="tBahnSet" EntityType="Model_Feuerwehrbewerb.tBahn" />
+    <EntitySet Name="tTypSet" EntityType="Model_Feuerwehrbewerb.tTyp" />
+    <EntitySet Name="tTeilnehmerSet" EntityType="Model_Feuerwehrbewerb.tTeilnehmer" />
+    <EntitySet Name="tLaufSet" EntityType="Model_Feuerwehrbewerb.tLauf" />
+    <AssociationSet Name="tBewerbZOT_Bewerb_Mannschaft" Association="Model_Feuerwehrbewerb.tBewerbZOT_Bewerb_Mannschaft">
+      <End Role="tBewerb" EntitySet="tBewerbSet" />
+      <End Role="ZOT_Bewerb_Mannschaft" EntitySet="tTeilnehmendeMannschaftSet" />
+    </AssociationSet>
+    <AssociationSet Name="tMannschafttTeilnehmer" Association="Model_Feuerwehrbewerb.tMannschafttTeilnehmer">
+      <End Role="tMannschaft" EntitySet="tMannschaftSet" />
+      <End Role="tTeilnehmer" EntitySet="tTeilnehmerSet" />
+    </AssociationSet>
+    <AssociationSet Name="tBahntLauf" Association="Model_Feuerwehrbewerb.tBahntLauf">
+      <End Role="tBahn" EntitySet="tBahnSet" />
+      <End Role="tLauf" EntitySet="tLaufSet" />
+    </AssociationSet>
+    <AssociationSet Name="tTyptLauf" Association="Model_Feuerwehrbewerb.tTyptLauf">
+      <End Role="tTyp" EntitySet="tTypSet" />
+      <End Role="tLauf" EntitySet="tLaufSet" />
+    </AssociationSet>
+    <AssociationSet Name="tMannschaftZOT_Bewerb_Mannschaft" Association="Model_Feuerwehrbewerb.tMannschaftZOT_Bewerb_Mannschaft">
+      <End Role="tMannschaft" EntitySet="tMannschaftSet" />
+      <End Role="ZOT_Bewerb_Mannschaft" EntitySet="tTeilnehmendeMannschaftSet" />
+    </AssociationSet>
+    <AssociationSet Name="ZOT_Bewerb_MannschafttLauf" Association="Model_Feuerwehrbewerb.ZOT_Bewerb_MannschafttLauf">
+      <End Role="ZOT_Bewerb_Mannschaft" EntitySet="tTeilnehmendeMannschaftSet" />
+      <End Role="tLauf" EntitySet="tLaufSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="tBewerb">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" Unicode="true" FixedLength="false" MaxLength="100" />
+    <Property Name="Datum" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="ZOT_Bewerb_Mannschaft" Relationship="Model_Feuerwehrbewerb.tBewerbZOT_Bewerb_Mannschaft" FromRole="tBewerb" ToRole="ZOT_Bewerb_Mannschaft" />
+  </EntityType>
+  <EntityType Name="tMannschaft">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" Unicode="true" FixedLength="false" MaxLength="100" />
+    <NavigationProperty Name="tTeilnehmer" Relationship="Model_Feuerwehrbewerb.tMannschafttTeilnehmer" FromRole="tMannschaft" ToRole="tTeilnehmer" />
+    <NavigationProperty Name="ZOT_Bewerb_Mannschaft" Relationship="Model_Feuerwehrbewerb.tMannschaftZOT_Bewerb_Mannschaft" FromRole="tMannschaft" ToRole="ZOT_Bewerb_Mannschaft" />
+  </EntityType>
+  <EntityType Name="tTeilnehmendeMannschaft">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Startnummer" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Platzierung" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tBewerb" Relationship="Model_Feuerwehrbewerb.tBewerbZOT_Bewerb_Mannschaft" FromRole="ZOT_Bewerb_Mannschaft" ToRole="tBewerb" />
+    <NavigationProperty Name="tMannschaft" Relationship="Model_Feuerwehrbewerb.tMannschaftZOT_Bewerb_Mannschaft" FromRole="ZOT_Bewerb_Mannschaft" ToRole="tMannschaft" />
+    <NavigationProperty Name="tLauf" Relationship="Model_Feuerwehrbewerb.ZOT_Bewerb_MannschafttLauf" FromRole="ZOT_Bewerb_Mannschaft" ToRole="tLauf" />
+  </EntityType>
+  <EntityType Name="tBahn">
+    <Key>
+      <PropertyRef Name="Nummer" />
+    </Key>
+    <Property Name="Nummer" Type="Int32" Nullable="false" />
+    <Property Name="Bezeichnung" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="tLauf" Relationship="Model_Feuerwehrbewerb.tBahntLauf" FromRole="tBahn" ToRole="tLauf" />
+  </EntityType>
+  <EntityType Name="tTyp">
+    <Key>
+      <PropertyRef Name="Kuerzel" />
+    </Key>
+    <Property Name="Kuerzel" Type="String" Nullable="false" Unicode="true" FixedLength="false" MaxLength="100" />
+    <Property Name="Bezeichnung" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="tLauf" Relationship="Model_Feuerwehrbewerb.tTyptLauf" FromRole="tTyp" ToRole="tLauf" />
+  </EntityType>
+  <EntityType Name="tTeilnehmer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Vorname" Type="String" Nullable="false" Unicode="true" FixedLength="false" MaxLength="100" />
+    <Property Name="Nachname" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="tMannschaft" Relationship="Model_Feuerwehrbewerb.tMannschafttTeilnehmer" FromRole="tTeilnehmer" ToRole="tMannschaft" />
+  </EntityType>
+  <EntityType Name="tLauf">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nettozeit" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Strafsekunden" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="tBahn" Relationship="Model_Feuerwehrbewerb.tBahntLauf" FromRole="tLauf" ToRole="tBahn" />
+    <NavigationProperty Name="tTyp" Relationship="Model_Feuerwehrbewerb.tTyptLauf" FromRole="tLauf" ToRole="tTyp" />
+    <NavigationProperty Name="ZOT_Bewerb_Mannschaft" Relationship="Model_Feuerwehrbewerb.ZOT_Bewerb_MannschafttLauf" FromRole="tLauf" ToRole="ZOT_Bewerb_Mannschaft" />
+  </EntityType>
+  <Association Name="tBewerbZOT_Bewerb_Mannschaft">
+    <End Type="Model_Feuerwehrbewerb.tBewerb" Role="tBewerb" Multiplicity="1" />
+    <End Type="Model_Feuerwehrbewerb.tTeilnehmendeMannschaft" Role="ZOT_Bewerb_Mannschaft" Multiplicity="*" />
+  </Association>
+  <Association Name="tMannschafttTeilnehmer">
+    <End Type="Model_Feuerwehrbewerb.tMannschaft" Role="tMannschaft" Multiplicity="1" />
+    <End Type="Model_Feuerwehrbewerb.tTeilnehmer" Role="tTeilnehmer" Multiplicity="*" />
+  </Association>
+  <Association Name="tBahntLauf">
+    <End Type="Model_Feuerwehrbewerb.tBahn" Role="tBahn" Multiplicity="1" />
+    <End Type="Model_Feuerwehrbewerb.tLauf" Role="tLauf" Multiplicity="*" />
+  </Association>
+  <Association Name="tTyptLauf">
+    <End Type="Model_Feuerwehrbewerb.tTyp" Role="tTyp" Multiplicity="1" />
+    <End Type="Model_Feuerwehrbewerb.tLauf" Role="tLauf" Multiplicity="*" />
+  </Association>
+  <Association Name="tMannschaftZOT_Bewerb_Mannschaft">
+    <End Type="Model_Feuerwehrbewerb.tMannschaft" Role="tMannschaft" Multiplicity="1" />
+    <End Type="Model_Feuerwehrbewerb.tTeilnehmendeMannschaft" Role="ZOT_Bewerb_Mannschaft" Multiplicity="*" />
+  </Association>
+  <Association Name="ZOT_Bewerb_MannschafttLauf">
+    <End Type="Model_Feuerwehrbewerb.tTeilnehmendeMannschaft" Role="ZOT_Bewerb_Mannschaft" Multiplicity="1" />
+    <End Type="Model_Feuerwehrbewerb.tLauf" Role="tLauf" Multiplicity="*" />
+  </Association>
+</Schema>
