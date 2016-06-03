@@ -6,8 +6,9 @@ C:\GitHub\DBA\FF_Bewerbe\FF_Bewerbe\bin\Debug\EntityFramework.SqlServer.dll
 C:\GitHub\DBA\FF_Bewerbe\FF_Bewerbe\bin\Debug\EntityFramework.xml
 C:\GitHub\DBA\FF_Bewerbe\FF_Bewerbe\bin\Debug\EntityFramework.SqlServer.xml
 C:\GitHub\DBA\FF_Bewerbe\FF_Bewerbe\obj\Debug\FF_Bewerbe.csprojResolveAssemblyReference.cache
-C:\GitHub\DBA\FF_Bewerbe\FF_Bewerbe\obj\Debug\FF_Bewerbe.Form1.resources
 C:\GitHub\DBA\FF_Bewerbe\FF_Bewerbe\obj\Debug\FF_Bewerbe.Properties.Resources.resources
 C:\GitHub\DBA\FF_Bewerbe\FF_Bewerbe\obj\Debug\FF_Bewerbe.csproj.GenerateResource.Cache
 C:\GitHub\DBA\FF_Bewerbe\FF_Bewerbe\obj\Debug\FF_Bewerbe.exe
 C:\GitHub\DBA\FF_Bewerbe\FF_Bewerbe\obj\Debug\FF_Bewerbe.pdb
+C:\GitHub\DBA\FF_Bewerbe\FF_Bewerbe\obj\Debug\FF_Bewerbe.Frm_Main.resources
+C:\GitHub\DBA\FF_Bewerbe\FF_Bewerbe\obj\Debug\FF_Bewerbe.Frm_Mannschaften.resources

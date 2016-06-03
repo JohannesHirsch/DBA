@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FF_Bewerbe</RootNamespace>
     <AssemblyName>FF_Bewerbe</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -57,21 +58,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BewerbDBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BewerbDBDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DB_BewerbDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DB_BewerbDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Frm_Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Frm_Main.Designer.cs">
+      <DependentUpon>Frm_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Mannschaften.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Mannschaften.Designer.cs">
+      <DependentUpon>Frm_Mannschaften.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Mist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Mist.Designer.cs">
+      <DependentUpon>Frm_Mist.cs</DependentUpon>
     </Compile>
     <Compile Include="Model_Feuerwehrbewerb.Context.cs">
       <AutoGen>True</AutoGen>
@@ -111,8 +114,11 @@
     <Compile Include="tTyp.cs">
       <DependentUpon>Model_Feuerwehrbewerb.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_Main.resx">
+      <DependentUpon>Frm_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Mannschaften.resx">
+      <DependentUpon>Frm_Mannschaften.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -122,33 +128,12 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EntityDeploy Include="Model_Feuerwehrbewerb.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model_Feuerwehrbewerb.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="BewerbDBDataSet.xsc">
-      <DependentUpon>BewerbDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="BewerbDBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BewerbDBDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="BewerbDBDataSet.xss">
-      <DependentUpon>BewerbDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="DB_BewerbDataSet.xsc">
-      <DependentUpon>DB_BewerbDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="DB_BewerbDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DB_BewerbDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DB_BewerbDataSet.xss">
-      <DependentUpon>DB_BewerbDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Model_Feuerwehrbewerb.edmx.diagram">
       <DependentUpon>Model_Feuerwehrbewerb.edmx</DependentUpon>
     </None>
@@ -162,6 +147,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="tBewerb.datasource" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
