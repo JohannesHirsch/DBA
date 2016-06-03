@@ -10,11 +10,11 @@ using System.Windows.Forms;
 using System.Data.Entity;
 
 namespace DBA_Bewerbe
-{    
-    public partial class FrmMain : Form
+{
+    public partial class FrmTyp : Form
     {
         Model_FeuerwehrbewerbContainer context;
-        public FrmMain()
+        public FrmTyp()
         {
             InitializeComponent();
         }
@@ -26,7 +26,7 @@ namespace DBA_Bewerbe
 
             this.context.tBewerbSet.Load();
 
-            this.tBewerbBindingSource.DataSource = context.tBewerbSet.Local.ToBindingList();
+            this.tTypBindingSource.DataSource = context.tTypSet.Local.ToBindingList();
         }
 
         private void btnSpeichern_Click(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace DBA_Bewerbe
 
             this.context.SaveChanges();
 
-            this.dgvBewerbe.Refresh();
+            this.dgvTyp.Refresh();
         }
 
         protected override void OnClosing(CancelEventArgs e)

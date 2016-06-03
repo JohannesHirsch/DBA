@@ -9,3 +9,5 @@ C:\GitHub\DBA\DBA_Bewerbe\DBA_Bewerbe\obj\Debug\DBA_Bewerbe.Properties.Resources
 C:\GitHub\DBA\DBA_Bewerbe\DBA_Bewerbe\obj\Debug\DBA_Bewerbe.csproj.GenerateResource.Cache
 C:\GitHub\DBA\DBA_Bewerbe\DBA_Bewerbe\obj\Debug\DBA_Bewerbe.exe
 C:\GitHub\DBA\DBA_Bewerbe\DBA_Bewerbe\obj\Debug\DBA_Bewerbe.pdb
+C:\GitHub\DBA\DBA_Bewerbe\DBA_Bewerbe\obj\Debug\DBA_Bewerbe.FrmMannschaften.resources
+C:\GitHub\DBA\DBA_Bewerbe\DBA_Bewerbe\obj\Debug\DBA_Bewerbe.FrmTeilnehmer.resources

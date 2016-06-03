@@ -54,11 +54,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmMain.cs">
+    <Compile Include="FrmTyp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmMain.Designer.cs">
-      <DependentUpon>FrmMain.cs</DependentUpon>
+    <Compile Include="FrmTyp.Designer.cs">
+      <DependentUpon>FrmTyp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBahn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBahn.Designer.cs">
+      <DependentUpon>FrmBahn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBewerb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBewerb.Designer.cs">
+      <DependentUpon>FrmBewerb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLauf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLauf.Designer.cs">
+      <DependentUpon>FrmLauf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMannschaften.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMannschaften.Designer.cs">
+      <DependentUpon>FrmMannschaften.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTeilnehmendeMannschaft.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTeilnehmendeMannschaft.Designer.cs">
+      <DependentUpon>FrmTeilnehmendeMannschaft.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTeilnehmer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTeilnehmer.Designer.cs">
+      <DependentUpon>FrmTeilnehmer.cs</DependentUpon>
     </Compile>
     <Compile Include="Model_Feuerwehrbewerb.Context.cs">
       <AutoGen>True</AutoGen>
@@ -99,8 +135,26 @@
     <Compile Include="tTyp.cs">
       <DependentUpon>Model_Feuerwehrbewerb.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FrmMain.resx">
-      <DependentUpon>FrmMain.cs</DependentUpon>
+    <EmbeddedResource Include="FrmBahn.resx">
+      <DependentUpon>FrmBahn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBewerb.resx">
+      <DependentUpon>FrmBewerb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLauf.resx">
+      <DependentUpon>FrmLauf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMannschaften.resx">
+      <DependentUpon>FrmMannschaften.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTeilnehmendeMannschaft.resx">
+      <DependentUpon>FrmTeilnehmendeMannschaft.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTeilnehmer.resx">
+      <DependentUpon>FrmTeilnehmer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTyp.resx">
+      <DependentUpon>FrmTyp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -119,7 +173,13 @@
       <DependentUpon>Model_Feuerwehrbewerb.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\tBahn.datasource" />
     <None Include="Properties\DataSources\tBewerb.datasource" />
+    <None Include="Properties\DataSources\tLauf.datasource" />
+    <None Include="Properties\DataSources\tMannschaft.datasource" />
+    <None Include="Properties\DataSources\tTeilnehmendeMannschaft.datasource" />
+    <None Include="Properties\DataSources\tTeilnehmer.datasource" />
+    <None Include="Properties\DataSources\tTyp.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
