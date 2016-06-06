@@ -43,5 +43,17 @@ namespace DBA_Bewerbe
             base.OnClosing(e);
             this.context.Dispose();
         }
+
+        private void btnTeilnehmer_Click(object sender, EventArgs e)
+        {
+            FrmTeilnehmendeMannschaft frmTeilnehmendeMannschaften = new FrmTeilnehmendeMannschaft();
+
+            frmTeilnehmendeMannschaften.ShowDialog();
+
+            if (frmTeilnehmendeMannschaften.DialogResult == DialogResult.OK)
+            {
+                MessageBox.Show("done");
+            }
+        }
     }
 }

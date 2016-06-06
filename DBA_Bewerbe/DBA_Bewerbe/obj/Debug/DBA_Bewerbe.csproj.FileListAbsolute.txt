@@ -4,10 +4,14 @@ C:\GitHub\DBA\DBA_Bewerbe\DBA_Bewerbe\bin\Debug\DBA_Bewerbe.pdb
 C:\GitHub\DBA\DBA_Bewerbe\DBA_Bewerbe\bin\Debug\EntityFramework.dll
 C:\GitHub\DBA\DBA_Bewerbe\DBA_Bewerbe\bin\Debug\EntityFramework.xml
 C:\GitHub\DBA\DBA_Bewerbe\DBA_Bewerbe\obj\Debug\DBA_Bewerbe.csprojResolveAssemblyReference.cache
-C:\GitHub\DBA\DBA_Bewerbe\DBA_Bewerbe\obj\Debug\DBA_Bewerbe.FrmMain.resources
 C:\GitHub\DBA\DBA_Bewerbe\DBA_Bewerbe\obj\Debug\DBA_Bewerbe.Properties.Resources.resources
 C:\GitHub\DBA\DBA_Bewerbe\DBA_Bewerbe\obj\Debug\DBA_Bewerbe.csproj.GenerateResource.Cache
 C:\GitHub\DBA\DBA_Bewerbe\DBA_Bewerbe\obj\Debug\DBA_Bewerbe.exe
 C:\GitHub\DBA\DBA_Bewerbe\DBA_Bewerbe\obj\Debug\DBA_Bewerbe.pdb
 C:\GitHub\DBA\DBA_Bewerbe\DBA_Bewerbe\obj\Debug\DBA_Bewerbe.FrmMannschaften.resources
 C:\GitHub\DBA\DBA_Bewerbe\DBA_Bewerbe\obj\Debug\DBA_Bewerbe.FrmTeilnehmer.resources
+C:\GitHub\DBA\DBA_Bewerbe\DBA_Bewerbe\obj\Debug\DBA_Bewerbe.FrmBahn.resources
+C:\GitHub\DBA\DBA_Bewerbe\DBA_Bewerbe\obj\Debug\DBA_Bewerbe.FrmBewerb.resources
+C:\GitHub\DBA\DBA_Bewerbe\DBA_Bewerbe\obj\Debug\DBA_Bewerbe.FrmLauf.resources
+C:\GitHub\DBA\DBA_Bewerbe\DBA_Bewerbe\obj\Debug\DBA_Bewerbe.FrmTeilnehmendeMannschaft.resources
+C:\GitHub\DBA\DBA_Bewerbe\DBA_Bewerbe\obj\Debug\DBA_Bewerbe.FrmTyp.resources

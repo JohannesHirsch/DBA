@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvTeilnehmendeMannschaft = new System.Windows.Forms.DataGridView();
+            this.btnSpeichern = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.startnummerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.platzierungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tBewerbDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tMannschaftDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tTeilnehmendeMannschaftBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnSpeichern = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeilnehmendeMannschaft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tTeilnehmendeMannschaftBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -56,6 +56,17 @@
             this.dgvTeilnehmendeMannschaft.Name = "dgvTeilnehmendeMannschaft";
             this.dgvTeilnehmendeMannschaft.Size = new System.Drawing.Size(571, 150);
             this.dgvTeilnehmendeMannschaft.TabIndex = 0;
+            // 
+            // btnSpeichern
+            // 
+            this.btnSpeichern.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnSpeichern.Location = new System.Drawing.Point(641, 227);
+            this.btnSpeichern.Name = "btnSpeichern";
+            this.btnSpeichern.Size = new System.Drawing.Size(75, 23);
+            this.btnSpeichern.TabIndex = 1;
+            this.btnSpeichern.Text = "Speichern";
+            this.btnSpeichern.UseVisualStyleBackColor = true;
+            this.btnSpeichern.Click += new System.EventHandler(this.btnSpeichern_Click);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -90,16 +101,6 @@
             // tTeilnehmendeMannschaftBindingSource
             // 
             this.tTeilnehmendeMannschaftBindingSource.DataSource = typeof(DBA_Bewerbe.tTeilnehmendeMannschaft);
-            // 
-            // btnSpeichern
-            // 
-            this.btnSpeichern.Location = new System.Drawing.Point(641, 227);
-            this.btnSpeichern.Name = "btnSpeichern";
-            this.btnSpeichern.Size = new System.Drawing.Size(75, 23);
-            this.btnSpeichern.TabIndex = 1;
-            this.btnSpeichern.Text = "Speichern";
-            this.btnSpeichern.UseVisualStyleBackColor = true;
-            this.btnSpeichern.Click += new System.EventHandler(this.btnSpeichern_Click);
             // 
             // FrmTeilnehmendeMannschaft
             // 

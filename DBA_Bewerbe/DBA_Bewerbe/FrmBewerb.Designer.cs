@@ -30,11 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvBewerbe = new System.Windows.Forms.DataGridView();
+            this.btnSpeichern = new System.Windows.Forms.Button();
+            this.btnTeilnehmer = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tBewerbBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnSpeichern = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBewerbe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBewerbBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -50,8 +51,28 @@
             this.dgvBewerbe.DataSource = this.tBewerbBindingSource;
             this.dgvBewerbe.Location = new System.Drawing.Point(12, 12);
             this.dgvBewerbe.Name = "dgvBewerbe";
-            this.dgvBewerbe.Size = new System.Drawing.Size(352, 138);
+            this.dgvBewerbe.Size = new System.Drawing.Size(481, 138);
             this.dgvBewerbe.TabIndex = 0;
+            // 
+            // btnSpeichern
+            // 
+            this.btnSpeichern.Location = new System.Drawing.Point(557, 349);
+            this.btnSpeichern.Name = "btnSpeichern";
+            this.btnSpeichern.Size = new System.Drawing.Size(75, 23);
+            this.btnSpeichern.TabIndex = 1;
+            this.btnSpeichern.Text = "Speichern";
+            this.btnSpeichern.UseVisualStyleBackColor = true;
+            this.btnSpeichern.Click += new System.EventHandler(this.btnSpeichern_Click);
+            // 
+            // btnTeilnehmer
+            // 
+            this.btnTeilnehmer.Location = new System.Drawing.Point(12, 156);
+            this.btnTeilnehmer.Name = "btnTeilnehmer";
+            this.btnTeilnehmer.Size = new System.Drawing.Size(75, 23);
+            this.btnTeilnehmer.TabIndex = 2;
+            this.btnTeilnehmer.Text = "Teilnehmer";
+            this.btnTeilnehmer.UseVisualStyleBackColor = true;
+            this.btnTeilnehmer.Click += new System.EventHandler(this.btnTeilnehmer_Click);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -75,21 +96,12 @@
             // 
             this.tBewerbBindingSource.DataSource = typeof(DBA_Bewerbe.tBewerb);
             // 
-            // btnSpeichern
-            // 
-            this.btnSpeichern.Location = new System.Drawing.Point(557, 349);
-            this.btnSpeichern.Name = "btnSpeichern";
-            this.btnSpeichern.Size = new System.Drawing.Size(75, 23);
-            this.btnSpeichern.TabIndex = 1;
-            this.btnSpeichern.Text = "Speichern";
-            this.btnSpeichern.UseVisualStyleBackColor = true;
-            this.btnSpeichern.Click += new System.EventHandler(this.btnSpeichern_Click);
-            // 
             // FrmBewerb
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(644, 384);
+            this.Controls.Add(this.btnTeilnehmer);
             this.Controls.Add(this.btnSpeichern);
             this.Controls.Add(this.dgvBewerbe);
             this.Name = "FrmBewerb";
@@ -108,6 +120,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn datumDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource tBewerbBindingSource;
         private System.Windows.Forms.Button btnSpeichern;
+        private System.Windows.Forms.Button btnTeilnehmer;
     }
 }
 
