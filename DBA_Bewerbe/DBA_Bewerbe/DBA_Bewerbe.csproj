@@ -54,6 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmTop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTop.Designer.cs">
+      <DependentUpon>FrmTop.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTyp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTeilnehmer.resx">
       <DependentUpon>FrmTeilnehmer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTop.resx">
+      <DependentUpon>FrmTop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTyp.resx">
       <DependentUpon>FrmTyp.cs</DependentUpon>

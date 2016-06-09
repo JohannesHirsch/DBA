@@ -27,6 +27,12 @@ namespace DBA_Bewerbe
             this.context.tBewerbSet.Load();
 
             this.tTeilnehmendeMannschaftBindingSource.DataSource = context.tTeilnehmendeMannschaftSet.Local.ToBindingList();
+
+            this.context.tBewerbSet.Load();
+            this.tBewerbBindingSource.DataSource = this.context.tBewerbSet.Local.ToBindingList();
+
+            this.context.tBewerbSet.Load();
+            this.tMannschaftBindingSource.DataSource = this.context.tBewerbSet.Local.ToBindingList();
         }
 
         private void btnSpeichern_Click(object sender, EventArgs e)
@@ -42,6 +48,11 @@ namespace DBA_Bewerbe
         {
             base.OnClosing(e);
             this.context.Dispose();
+        }
+
+        private void FrmTeilnehmendeMannschaft_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -234,6 +234,8 @@
           <NavigationProperty Name="tBewerb" Relationship="Model_Feuerwehrbewerb.tBewerbZOT_Bewerb_Mannschaft" FromRole="ZOT_Bewerb_Mannschaft" ToRole="tBewerb" />
           <NavigationProperty Name="tMannschaft" Relationship="Model_Feuerwehrbewerb.tMannschaftZOT_Bewerb_Mannschaft" FromRole="ZOT_Bewerb_Mannschaft" ToRole="tMannschaft" />
           <NavigationProperty Name="tLauf" Relationship="Model_Feuerwehrbewerb.ZOT_Bewerb_MannschafttLauf" FromRole="ZOT_Bewerb_Mannschaft" ToRole="tLauf" />
+          <Property Name="BewerbID" Type="Int32" Nullable="false" />
+          <Property Name="MannschaftID" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="tBahn">
           <Key>

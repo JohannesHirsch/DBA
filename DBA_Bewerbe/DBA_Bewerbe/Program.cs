@@ -16,7 +16,7 @@ namespace DBA_Bewerbe
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmBewerb());
+            Application.Run(new FrmTop());
         }
     }
 }

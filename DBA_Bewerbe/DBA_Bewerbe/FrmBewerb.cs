@@ -13,17 +13,29 @@ namespace DBA_Bewerbe
 {    
     public partial class FrmBewerb : Form
     {
+
+        #region Membervariablen
+
         Model_FeuerwehrbewerbContainer context;
+
+        #endregion
+
+        #region Konstruktor
+
         public FrmBewerb()
         {
             InitializeComponent();
         }
 
+        #endregion
+
+        #region Events
+        
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
             this.context = new Model_FeuerwehrbewerbContainer();
-
+            
             this.context.tBewerbSet.Load();
 
             this.tBewerbBindingSource.DataSource = context.tBewerbSet.Local.ToBindingList();
@@ -55,5 +67,7 @@ namespace DBA_Bewerbe
                 MessageBox.Show("done");
             }
         }
+        
+        #endregion
     }
 }
